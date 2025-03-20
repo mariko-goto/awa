@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", function () {
     let screenWidth = window.innerWidth;
     let screenHeight = window.innerHeight;
 
-    let centerMinX = screenWidth * 0.3;  // 中央エリアの開始X座標
-    let centerMaxX = screenWidth * 0.7;  // 中央エリアの終了X座標
-    let centerMinY = screenHeight * 0.3; // 中央エリアの開始Y座標
-    let centerMaxY = screenHeight * 0.7; // 中央エリアの終了Y座標
+    let centerMinX = screenWidth * 0.2;  // 中央エリアの開始X座標
+    let centerMaxX = screenWidth * 0.8;  // 中央エリアの終了X座標
+    let centerMinY = screenHeight * 0.2; // 中央エリアの開始Y座標
+    let centerMaxY = screenHeight * 0.8; // 中央エリアの終了Y座標
 
     // 泡を 100 個追加（中央エリアには配置しない）
-    for (let i = 0; i < 60; i++) {
+    for (let i = 0; i < 100; i++) {
         let posX, posY;
         
         do {
@@ -20,8 +20,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
         let bubble = document.createElement("div");
         bubble.className = "canvasUnderReactingBlock";
+
+        // 🫧 【方法①】完全ランダムサイズ（30px ~ 100px）
+        let size = Math.random() * 140 + 60; // 30 〜 100px のランダムサイズ
+
+        // 🫧 【方法②】固定サイズ（40px, 60px, 80px）
+        // let sizes = [40, 60, 80];
+        // let size = sizes[Math.floor(Math.random() * sizes.length)];
+
+        bubble.style.width = size + "px";
+        bubble.style.height = size + "px";
         bubble.style.left = posX + "px";
         bubble.style.top = posY + "px";
+
         canvasUnder.appendChild(bubble);
     }
 
