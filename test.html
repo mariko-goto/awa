@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas エフェクト</title>
+    <style>
+body {
+    margin: 0;
+    overflow: hidden;
+    background-color: #f0f8ff; /* 薄い水色の背景 */
+}
+
+#canvasUnder {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: auto;
+}
+
+.canvasUnderReactingBlock {
+    position: absolute;
+    width: 150px; /* 🫧 泡のサイズを大きく */
+    height: 150px;
+    background-color: rgba(173, 216, 230, 0.9); /* より明るい水色 */
+    border-radius: 50%; /* 丸い形 */
+    box-shadow: 0 0 20px rgba(173, 216, 230, 0.7); /* もっとふんわり光る */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.move1 {
+    opacity: 0.5; /* ちょっと透明になる */
+    transform: scale(0.7); /* 少し縮む */
+}
+
+.reaction {
+    opacity: 0; /* 完全に透明になる（消える） */
+    transform: scale(0); /* もっと小さくなる */
+}
+
+
+
+    </style>
+</head>
+<body>
+    <div id="canvasUnder"></div>
+    <script src="script.js"></script>
+</body>
+</html>
