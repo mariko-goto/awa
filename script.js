@@ -6,8 +6,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
     let centerMinX = screenWidth * 0.2;  // 中央エリアの開始X座標
     let centerMaxX = screenWidth * 0.8;  // 中央エリアの終了X座標
-    let centerMinY = screenHeight * 0.2; // 中央エリアの開始Y座標
-    let centerMaxY = screenHeight * 0.8; // 中央エリアの終了Y座標
+    let centerMinY = screenHeight * 0.1; // 中央エリアの開始Y座標
+    let centerMaxY = screenHeight * 0.9; // 中央エリアの終了Y座標
 
     // 泡を 100 個追加（中央エリアには配置しない）
     for (let i = 0; i < 100; i++) {
